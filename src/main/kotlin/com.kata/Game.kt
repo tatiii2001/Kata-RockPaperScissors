@@ -1,33 +1,47 @@
 package com.kata
 
 interface Choice {
-    val whoBeats: Choice
-    fun beats(choice: Choice): Boolean = choice == whoBeats
+    val whoBeats: List<Choice>
+    fun beats(choice: Choice): Boolean = whoBeats.any { it == choice }
 
     companion object {
         fun of(name: String): Choice = when(name.uppercase()) {
             "SCISSORS" -> Scissors
             "PAPER" -> Paper
             "ROCK" -> Rock
+            "SPOCK" -> Spock
+            "Lizard" ->Lizard
             else -> throw IllegalArgumentException("Incorrect choice, '$name'")
         }
     }
 
     object Scissors: Choice {
-        override val whoBeats: Choice
-            get() = Paper
+        override val whoBeats: List<Choice>
+            get() = listOf(Paper, Lizard)
 
     }
 
     object Paper: Choice {
-        override val whoBeats: Choice
-            get() = Rock
+        override val whoBeats: List<Choice>
+            get() = listOf(Rock, Spock)
 
     }
 
     object Rock: Choice {
-        override val whoBeats: Choice
-            get() = Scissors
+        override val whoBeats: List<Choice>
+            get() = listOf(Scissors, Lizard)
+
+    }
+
+    object Spock: Choice {
+        override val whoBeats: List<Choice>
+            get() = listOf(Scissors, Rock)
+
+    }
+
+    object Lizard: Choice {
+        override val whoBeats: List<Choice>
+            get() = listOf(Spock, Paper)
 
     }
 }

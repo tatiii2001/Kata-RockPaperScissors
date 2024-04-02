@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83b1bbe-893f-4d38-9f57-e106e3f04296" name="Changes" comment="Refactoring: add the element Spock to the combination and change the tests to the infix type" />
+    <list default="true" id="b83b1bbe-893f-4d38-9f57-e106e3f04296" name="Changes" comment="Refactoring: rename the variable name of the winner-loser combinations">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com.kata/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com.kata/Game.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +46,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -78,7 +86,7 @@
     "Kotest.GameTest: scissors beats paper.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "refactor-solid",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Tati/proyectos/Kata-RockPaperScissors",
@@ -225,13 +233,22 @@
       <option name="project" value="LOCAL" />
       <updated>1712054519407</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactoring: rename the variable name of the winner-loser combinations">
+      <option name="closed" value="true" />
+      <created>1712054876298</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712054876298</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creation of the Game class and implementation of the method to find the winning player, and implement the tests for a different scenarios" />
     <MESSAGE value="Refactoring of the Game class, creating the enum ElementType class to specify the unique options and creating the methods for the verification of the game rules, as well as creating the tests to verify these improvements." />
     <MESSAGE value="Refactoring: add the element Spock to the combination and change the tests to the infix type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring: add the element Spock to the combination and change the tests to the infix type" />
+    <MESSAGE value="Refactoring: rename the variable name of the winner-loser combinations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring: rename the variable name of the winner-loser combinations" />
   </component>
 </project>

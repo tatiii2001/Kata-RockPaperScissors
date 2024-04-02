@@ -10,7 +10,7 @@ class Game(private val player1: String, private val player2 : String) {
         if(!isTheCorrectElement()){
             return "It's not the correct element"
         }
-        firstWinnerAndSecondLoserCombination.forEach {
+        firstBeatsTheSecondElement.forEach {
             if (it.first == this.player1 && it.second == this.player2){
                 return  "Player 1 win"
             }
@@ -31,7 +31,7 @@ class Game(private val player1: String, private val player2 : String) {
         }
     }
 
-    private val firstWinnerAndSecondLoserCombination = listOf(
+    private val firstBeatsTheSecondElement = listOf(
         Pair("scissors", "paper"),
         Pair("paper", "rock"),
         Pair("rock", "scissors"),

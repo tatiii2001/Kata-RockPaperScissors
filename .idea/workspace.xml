@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83b1bbe-893f-4d38-9f57-e106e3f04296" name="Changes" comment="Refactoring of the Game class, creating the enum ElementType class to specify the unique options and creating the methods for the verification of the game rules, as well as creating the tests to verify these improvements.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com.kata/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com.kata/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com.kata/GameShould.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com.kata/GameShould.kt" afterDir="false" />
-    </list>
+    <list default="true" id="b83b1bbe-893f-4d38-9f57-e106e3f04296" name="Changes" comment="Refactoring: add the element Spock to the combination and change the tests to the infix type" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,12 +217,21 @@
       <option name="project" value="LOCAL" />
       <updated>1712049689458</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactoring: add the element Spock to the combination and change the tests to the infix type">
+      <option name="closed" value="true" />
+      <created>1712054519407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712054519407</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creation of the Game class and implementation of the method to find the winning player, and implement the tests for a different scenarios" />
     <MESSAGE value="Refactoring of the Game class, creating the enum ElementType class to specify the unique options and creating the methods for the verification of the game rules, as well as creating the tests to verify these improvements." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring of the Game class, creating the enum ElementType class to specify the unique options and creating the methods for the verification of the game rules, as well as creating the tests to verify these improvements." />
+    <MESSAGE value="Refactoring: add the element Spock to the combination and change the tests to the infix type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring: add the element Spock to the combination and change the tests to the infix type" />
   </component>
 </project>

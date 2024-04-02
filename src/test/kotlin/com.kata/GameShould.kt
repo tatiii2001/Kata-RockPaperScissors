@@ -2,6 +2,7 @@ package com.kata
 
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
+import org.junit.jupiter.api.assertThrows
 
 /*
     *   Meet the game ranking:
@@ -14,29 +15,29 @@ import io.kotest.matchers.shouldBe
      */
 class GameShould : DescribeSpec({
 
-    describe("Player 1 win when"){
-        it("scissors beats paper"){
+    describe("Player 1 win when") {
+        it("scissors beats paper") {
             val game = Game("scissors", "paper")
 
             val result = game.whoWins()
 
             result shouldBe "Player 1 win"
         }
-        it("paper beats rock"){
+        it("paper beats rock") {
             val game = Game("paper", "rock")
 
             val result = game.whoWins()
 
             result shouldBe "Player 1 win"
         }
-        it("rock beats scissors"){
+        it("rock beats scissors") {
             val game = Game("rock", "scissors")
 
             val result = game.whoWins()
 
             result shouldBe "Player 1 win"
         }
-        it("it's the same element"){
+        it("it's the same element") {
             val game = Game("rock", "rock")
 
             val result = game.whoWins()
@@ -45,39 +46,19 @@ class GameShould : DescribeSpec({
         }
     }
 
-    describe("Player 2 win when"){
-        it("rock beats scissors"){
+    describe("Player 2 win when") {
+        it("rock beats scissors") {
             val game = Game("scissors", "rock")
 
             val result = game.whoWins()
 
             result shouldBe "Player 2 win"
         }
-        it("paper beats Spock"){
-            val game = Game("Spock", "paper")
-
-            val result = game.whoWins()
-
-            result shouldBe "Player 2 win"
-        }
     }
 
-    describe("Player 1 or 2 put the incorrect element"){
-        it("papa beats scissors"){
-            val game = Game("papa", "rock")
+    it("fail when any player make an incorrect choice") {
+        val actualException = assertThrows<IllegalArgumentException> { Game("papa", "rock") }
 
-            val result = game.whoWins()
-
-            result shouldBe "It's not the correct element"
-        }
-        it("rock beats papa"){
-            val game = Game("rock", "papa")
-
-            val result = game.whoWins()
-
-            result shouldBe "It's not the correct element"
-        }
+        actualException.message shouldBe "Incorrect choice, 'papa'"
     }
-
-
 })

@@ -1,41 +1,48 @@
 package com.kata
 
-enum class ElementType{
-    ROCK, PAPER, SCISSORS, SPOCK;
+interface Choice {
+    val whoBeats: Choice
+    fun beats(choice: Choice): Boolean = choice == whoBeats
+
+    companion object {
+        fun of(name: String): Choice = when(name.uppercase()) {
+            "SCISSORS" -> Scissors
+            "PAPER" -> Paper
+            "ROCK" -> Rock
+            else -> throw IllegalArgumentException("Incorrect choice, '$name'")
+        }
+    }
+
+    object Scissors: Choice {
+        override val whoBeats: Choice
+            get() = Paper
+
+    }
+
+    object Paper: Choice {
+        override val whoBeats: Choice
+            get() = Rock
+
+    }
+
+    object Rock: Choice {
+        override val whoBeats: Choice
+            get() = Scissors
+
+    }
 }
 
-class Game(private val player1: String, private val player2 : String) {
+class Game(firstPlayerChoice: String, secondPlayerChoice: String) {
+    private val firstPlayerChoice: Choice = Choice.of(firstPlayerChoice)
+    private val secondPlayerChoice: Choice = Choice.of(secondPlayerChoice)
 
     fun whoWins(): String {
-        if(!isTheCorrectElement()){
-            return "It's not the correct element"
+        if (firstPlayerChoice == secondPlayerChoice) {
+            return "Draw!!"
         }
-        firstBeatsTheSecondElement.forEach {
-            if (it.first == this.player1 && it.second == this.player2){
-                return  "Player 1 win"
-            }
-            if (it.second == this.player1 && it.first == this.player2){
-                return "Player 2 win"
-            }
+        if (firstPlayerChoice.beats(secondPlayerChoice)) {
+            return "Player 1 win"
         }
-        return "Draw!!"
+        return "Player 2 win"
     }
-
-    private fun isTheCorrectElement() : Boolean{
-        try {
-            ElementType.valueOf(this.player1.uppercase())
-            ElementType.valueOf(this.player2.uppercase())
-            return true
-        } catch (error : IllegalArgumentException){
-            return false
-        }
-    }
-
-    private val firstBeatsTheSecondElement = listOf(
-        Pair("scissors", "paper"),
-        Pair("paper", "rock"),
-        Pair("rock", "scissors"),
-        Pair("paper", "Spock")
-    )
-
 }

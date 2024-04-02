@@ -1,7 +1,7 @@
 package com.kata
 
 enum class ElementType{
-    ROCK, PAPER, SCISSORS;
+    ROCK, PAPER, SCISSORS, SPOCK;
 }
 
 class Game(private val player1: String, private val player2 : String) {
@@ -10,7 +10,7 @@ class Game(private val player1: String, private val player2 : String) {
         if(!isTheCorrectElement()){
             return "It's not the correct element"
         }
-        winnerLoserCombinations.forEach {
+        firstWinnerAndSecondLoserCombination.forEach {
             if (it.first == this.player1 && it.second == this.player2){
                 return  "Player 1 win"
             }
@@ -31,10 +31,11 @@ class Game(private val player1: String, private val player2 : String) {
         }
     }
 
-    private val winnerLoserCombinations = listOf(
+    private val firstWinnerAndSecondLoserCombination = listOf(
         Pair("scissors", "paper"),
         Pair("paper", "rock"),
-        Pair("rock", "scissors")
+        Pair("rock", "scissors"),
+        Pair("paper", "Spock")
     )
 
 }

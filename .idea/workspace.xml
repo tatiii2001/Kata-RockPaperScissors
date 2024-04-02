@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b83b1bbe-893f-4d38-9f57-e106e3f04296" name="Changes" comment="Creation of the Game class and implementation of the method to find the winning player, and implement the tests for a different scenarios">
+    <list default="true" id="b83b1bbe-893f-4d38-9f57-e106e3f04296" name="Changes" comment="Refactoring of the Game class, creating the enum ElementType class to specify the unique options and creating the methods for the verification of the game rules, as well as creating the tests to verify these improvements.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com.kata/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com.kata/Game.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/com.kata/GameShould.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com.kata/GameShould.kt" afterDir="false" />
@@ -65,6 +65,8 @@
     "Gradle.GameShould.executor": "Run",
     "Gradle.GameTest.executor": "Run",
     "Kotest.GameShould: Player 1 or 2 put the incorrect element.executor": "Run",
+    "Kotest.GameShould: paper beats Spock (1).executor": "Run",
+    "Kotest.GameShould: paper beats Spock.executor": "Run",
     "Kotest.GameShould: rock beats papa.executor": "Run",
     "Kotest.GameShould: scissors beats paper (1).executor": "Run",
     "Kotest.GameShould: scissors beats paper.executor": "Run",
@@ -132,6 +134,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameShould: paper beats Spock (1)" type="ioKotest" factoryName="Kotest" temporary="true" defaultName="singleModule">
+      <module name="Kata-RockPaperScissors.test" />
+      <option name="jrePath" value="" />
+      <option name="jrePathEnabled" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
+      <option name="programParameters" value="" />
+      <option name="specName" value="com.kata.GameShould" />
+      <option name="testPath" value="Player 2 win when -- paper beats Spock" />
+      <option name="packageName" value="" />
+      <option name="vmparams" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameShould: paper beats Spock" type="ioKotest" factoryName="Kotest" temporary="true" defaultName="singleModule">
+      <module name="Kata-RockPaperScissors.test" />
+      <option name="jrePath" value="" />
+      <option name="jrePathEnabled" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
+      <option name="programParameters" value="" />
+      <option name="specName" value="com.kata.GameShould" />
+      <option name="testPath" value="Player 2 win when -- paper beats Spock" />
+      <option name="packageName" value="" />
+      <option name="vmparams" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameShould: rock beats papa" type="ioKotest" factoryName="Kotest" temporary="true" defaultName="singleModule">
       <module name="Kata-RockPaperScissors.test" />
       <option name="jrePath" value="" />
@@ -147,43 +179,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameShould: scissors beats paper (1)" type="ioKotest" factoryName="Kotest" temporary="true" defaultName="singleModule">
-      <module name="Kata-RockPaperScissors.test" />
-      <option name="jrePath" value="" />
-      <option name="jrePathEnabled" value="false" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
-      <option name="programParameters" value="" />
-      <option name="specName" value="com.kata.GameShould" />
-      <option name="testPath" value="Player 1 win when -- scissors beats paper" />
-      <option name="packageName" value="" />
-      <option name="vmparams" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameShould: scissors beats paper" type="ioKotest" factoryName="Kotest" temporary="true" defaultName="singleModule">
-      <module name="Kata-RockPaperScissors.test" />
-      <option name="jrePath" value="" />
-      <option name="jrePathEnabled" value="false" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
-      <option name="programParameters" value="" />
-      <option name="specName" value="com.kata.GameShould" />
-      <option name="testPath" value="Player 1 win when -- scissors beats paper" />
-      <option name="packageName" value="" />
-      <option name="vmparams" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GameShould (1)" />
+        <item itemvalue="Kotest.GameShould: paper beats Spock (1)" />
+        <item itemvalue="Kotest.GameShould: paper beats Spock" />
         <item itemvalue="Kotest.GameShould: rock beats papa" />
         <item itemvalue="Kotest.GameShould: Player 1 or 2 put the incorrect element" />
-        <item itemvalue="Kotest.GameShould: scissors beats paper (1)" />
-        <item itemvalue="Kotest.GameShould: scissors beats paper" />
       </list>
     </recent_temporary>
   </component>
@@ -211,11 +213,20 @@
       <option name="project" value="LOCAL" />
       <updated>1711980664660</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactoring of the Game class, creating the enum ElementType class to specify the unique options and creating the methods for the verification of the game rules, as well as creating the tests to verify these improvements.">
+      <option name="closed" value="true" />
+      <created>1712049689458</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712049689458</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creation of the Game class and implementation of the method to find the winning player, and implement the tests for a different scenarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creation of the Game class and implementation of the method to find the winning player, and implement the tests for a different scenarios" />
+    <MESSAGE value="Refactoring of the Game class, creating the enum ElementType class to specify the unique options and creating the methods for the verification of the game rules, as well as creating the tests to verify these improvements." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring of the Game class, creating the enum ElementType class to specify the unique options and creating the methods for the verification of the game rules, as well as creating the tests to verify these improvements." />
   </component>
 </project>

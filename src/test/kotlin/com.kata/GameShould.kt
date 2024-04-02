@@ -20,28 +20,28 @@ class GameShould : DescribeSpec({
 
             val result = game.whoWins()
 
-            result.shouldBe("Player 1 win")
+            result shouldBe "Player 1 win"
         }
         it("paper beats rock"){
             val game = Game("paper", "rock")
 
             val result = game.whoWins()
 
-            result.shouldBe("Player 1 win")
+            result shouldBe "Player 1 win"
         }
         it("rock beats scissors"){
             val game = Game("rock", "scissors")
 
             val result = game.whoWins()
 
-            result.shouldBe("Player 1 win")
+            result shouldBe "Player 1 win"
         }
         it("it's the same element"){
             val game = Game("rock", "rock")
 
             val result = game.whoWins()
 
-            result.shouldBe("Draw!!")
+            result shouldBe "Draw!!"
         }
     }
 
@@ -51,7 +51,14 @@ class GameShould : DescribeSpec({
 
             val result = game.whoWins()
 
-            result.shouldBe("Player 2 win")
+            result shouldBe "Player 2 win"
+        }
+        it("paper beats Spock"){
+            val game = Game("Spock", "paper")
+
+            val result = game.whoWins()
+
+            result shouldBe "Player 2 win"
         }
     }
 
@@ -61,15 +68,16 @@ class GameShould : DescribeSpec({
 
             val result = game.whoWins()
 
-            result.shouldBe("It's not the correct element")
+            result shouldBe "It's not the correct element"
         }
         it("rock beats papa"){
             val game = Game("rock", "papa")
 
             val result = game.whoWins()
 
-            result.shouldBe("It's not the correct element")
+            result shouldBe "It's not the correct element"
         }
     }
+
 
 })
